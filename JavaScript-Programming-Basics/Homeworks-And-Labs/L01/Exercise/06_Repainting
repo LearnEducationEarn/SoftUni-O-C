@@ -1,0 +1,27 @@
+function repainting(input) {
+    const NYLON_PER_SQUARE_METER = 1.50;
+    const PAINT_PER_LITTER = 14.50;
+    const THINNER_PER_LITTER = 5.00;
+
+    let neededQuantityNylon = Number(input[0]);      //Per Square Meter
+    let neededQuantityPaint = Number(input[1]);      //Per Litter
+    let neededQuantityThinner = Number(input[2]);    //Per Litter
+    let workingHours = Number(input[3]);             
+
+    let extraPaint = neededQuantityPaint * 0.10;
+    let extraNylon = neededQuantityNylon + 2;
+    let bags = 0.40;
+
+    let priceForNylon = extraNylon * NYLON_PER_SQUARE_METER;
+    let priceForPaint = (neededQuantityPaint + extraPaint) * PAINT_PER_LITTER;
+    let priceForThinner = neededQuantityThinner * THINNER_PER_LITTER;
+
+    let totalCostsForMaterials = priceForNylon + priceForPaint + priceForThinner + bags;
+    let sumForWorkersPerHour = (totalCostsForMaterials * 0.30);
+    let totalSumForworkers = sumForWorkersPerHour * workingHours;
+
+    let result = totalCostsForMaterials + totalSumForworkers;
+
+    console.log(result);
+
+}
