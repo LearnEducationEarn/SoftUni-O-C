@@ -1,0 +1,24 @@
+function suppliesForSchool(input) {
+    const PACKAGE_PENS = 5.80;
+    const PACKAGE_HIGHLIGHTER = 7.20;
+    const THINNER_IN_LITTERS = 1.20;
+
+
+    let countPens = Number(input[0]);
+    let countHighlighters = Number(input[1]);
+    let neededLittersThinner = Number(input[2]);
+    let discount = Number(input[3] / 100);
+ 
+
+    let totalSumOfPens = countPens * PACKAGE_PENS;
+    let totalSumOfHighlighters = countHighlighters * PACKAGE_HIGHLIGHTER;
+    let totalSumOfThinner = neededLittersThinner * THINNER_IN_LITTERS;
+
+    let sumWithoutDiscount = totalSumOfPens + totalSumOfHighlighters + totalSumOfThinner;
+    let sumWithDiscount = sumWithoutDiscount * discount ; 
+    let total = sumWithoutDiscount - sumWithDiscount;
+
+    console.log(total);
+
+
+}
