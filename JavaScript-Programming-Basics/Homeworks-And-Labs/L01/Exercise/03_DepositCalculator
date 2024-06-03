@@ -1,0 +1,11 @@
+function depositCalculator(input) {
+    let depositSum = Number(input[0]);
+    let depositPeriod = Number(input[1]);
+    let annualInterestRate = Number(input[2]);
+
+    let calculatingInterest = depositSum * (annualInterestRate / 100);   //annualInterestRate * 0.01;
+    let monthInterest = calculatingInterest / 12;
+    let totalSum = depositSum + (depositPeriod * monthInterest);
+
+    console.log(totalSum);
+}
