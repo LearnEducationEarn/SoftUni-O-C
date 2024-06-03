@@ -1,0 +1,15 @@
+function vacationBooksList(input) {
+    let countPagesInCurrentBook = Number(input[0]);
+    let pagesPerhour = Number(input[1]);
+    let neededDaysForReading = Number(input[2]);
+
+    let totalNeededHours = countPagesInCurrentBook / pagesPerhour;
+    let neededHoursPerDay = totalNeededHours / neededDaysForReading;
+
+
+    console.log(neededHoursPerDay);
+
+
+
+
+}
