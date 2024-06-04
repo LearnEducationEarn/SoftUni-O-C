@@ -1,0 +1,18 @@
+function basketballEquipment(input) {
+    let annualTaxForBasketball = Number(input[0]);
+
+    let basketballSneakers = annualTaxForBasketball * 0.60;
+    let basketballOutfit = basketballSneakers * 0.80;
+    let ball = basketballOutfit * 0.25;               //1/4 = 0.25
+    let accessories = ball * 0.20;                    //1/5 = 0.20
+
+    let totalTaxes = annualTaxForBasketball + basketballSneakers + basketballOutfit + ball + accessories;
+
+    console.log(totalTaxes);
+
+
+
+
+
+
+}
