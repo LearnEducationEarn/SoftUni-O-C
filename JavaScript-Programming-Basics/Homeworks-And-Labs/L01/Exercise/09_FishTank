@@ -4,10 +4,10 @@ function fishTank(input) {
     let height = Number(input[2]);
     let percent = Number(input[3]);
 
-    //Един литър вода се равнява на един кубичен дециметър/ 1л= 1 дм3/.
-    let tankVolume = length * width * height;  //Обема в см^3
-    let littersVolume = tankVolume / 1000;     //Обема в литри   1л = 1 дм^3
-    let occupiedSpace =  percent / 100;             //заето пространство
+   
+    let tankVolume = length * width * height;  
+    let littersVolume = tankVolume / 1000;     
+    let occupiedSpace =  percent / 100;             
     let neededLitters = littersVolume * (1 - occupiedSpace);
 
 
