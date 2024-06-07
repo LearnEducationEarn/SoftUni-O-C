@@ -1,1 +1,10 @@
+function inchesToCentimeters(input) {
+    const CENTIMETERS_MULTIPLIER = 2.54;
 
+    let inches = Number(input[0]);
+    let centimeters = (CENTIMETERS_MULTIPLIER * inches);
+
+    console.log(centimeters);
+
+
+}
