@@ -4,7 +4,7 @@ function concatenateData(input) {
     let age = Number(input[2]);
     let town = input[3];
 
-    //const [firstName, lastName, age, city] = input - Използване ан съкратен запис на горното!//
+    //const [firstName, lastName, age, city] = input 
 
 
     console.log(`You are ${firstName} ${lastName}, a ${age}-years old person from ${town}.`);
