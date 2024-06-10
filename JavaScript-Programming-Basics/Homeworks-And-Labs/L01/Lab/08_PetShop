@@ -1,0 +1,17 @@
+function petShop(input) {
+    const DOG_FOOD = 2.50;
+    const CAT_FOOD = 4;
+
+    const countFoodForDogs = Number(input[0]); 
+    const countFoodForCats = Number(input[1]); 
+
+    const totalDogFood = countFoodForDogs * DOG_FOOD;
+    const totalCatFood = countFoodForCats * CAT_FOOD;
+    
+    const total = totalDogFood + totalCatFood;
+
+    console.log(`${total} lv.`)    
+
+
+
+}
