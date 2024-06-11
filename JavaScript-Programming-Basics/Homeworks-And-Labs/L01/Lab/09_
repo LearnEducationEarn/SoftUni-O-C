@@ -1,1 +1,20 @@
+function yardGardening(input) {
+    const PRICE_PER_SQUARE_METER = 7.61;
 
+    const squareMeters = Number(input[0]);
+
+    const priceBeforeDiscount = PRICE_PER_SQUARE_METER * squareMeters;
+
+
+    const discount = priceBeforeDiscount * 0.18;
+
+    const finalPrice = priceBeforeDiscount - discount;
+
+
+
+    console.log(`The final price is: ${finalPrice} lv.`);
+    console.log(`The discount is: ${discount} lv.`)
+
+
+
+}
