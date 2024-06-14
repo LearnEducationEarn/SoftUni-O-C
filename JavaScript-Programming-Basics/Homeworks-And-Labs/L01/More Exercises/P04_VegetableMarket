@@ -1,0 +1,16 @@
+function vegetableMarket(input) {
+    const RATE_IN_EURO = 1.94;
+
+    let pricePerKiloVegetables = Number(input[0]);
+    let pricePerKiloFruits = Number(input[1]);
+    let totalKiloForVegetables = Number(input[2]);
+    let totalKiloForFruits = Number(input[3]);
+
+
+    let totalPriceVegetables = pricePerKiloVegetables * totalKiloForVegetables;
+    let totalPriceFruits = pricePerKiloFruits * totalKiloForFruits;
+    
+    let total = (totalPriceVegetables + totalPriceFruits) / RATE_IN_EURO;
+
+  console.log(Number(total).toFixed(2));
+}
