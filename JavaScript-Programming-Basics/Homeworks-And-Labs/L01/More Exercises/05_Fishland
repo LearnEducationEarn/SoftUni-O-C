@@ -1,0 +1,21 @@
+function fishland(input) {
+    let priceMackerelPerKilo = Number(input[0]);  //цена на скумрията на килограм
+    let priceSprinklePerKilo = Number(input[1]);  //на цацата на килограм
+    let bonitoPerKilo = Number(input[2]);    //килограма паламуд
+    let safridPerKilo = Number(input[3]);    //килограма сафрид
+    let clamsPerKilo = Number(input[4]);     //килограма миди
+
+    const PRICE_BONITO = priceMackerelPerKilo * 0.60 + priceMackerelPerKilo;
+    const PRICE_SAFRID = priceSprinklePerKilo * 0.80 + priceSprinklePerKilo;
+    const PRICE_CLAMS = 7.50;
+
+    let totalPriceBonito = PRICE_BONITO * bonitoPerKilo;
+    let totalPriceSafrid = PRICE_SAFRID * safridPerKilo;
+    let totalpriceClams = PRICE_CLAMS * clamsPerKilo;
+
+
+    let totalSum = totalPriceBonito + totalPriceSafrid + totalpriceClams;
+
+    console.log(Number(totalSum).toFixed(2));
+
+}
