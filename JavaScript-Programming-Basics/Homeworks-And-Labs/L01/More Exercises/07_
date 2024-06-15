@@ -1,0 +1,37 @@
+function housePainting(input) {
+    const PAINT_GREEN_PER_SQUAD_METTER = 3.4;
+    const PAINT_RED_PER_SQUAD_METTER = 4.3;
+    
+    
+    
+    let x = Number(input[0]);           //височината на къщата - 6
+    let y = Number(input[1]);           //дължината на страничната стена - 10
+    let h = Number(input[2]);           //височината на триъгълната стена на покрива - 5.2
+
+    //СТЕНИ
+    let sideArea =  x * y;
+    let window = 1.5 * 1.5;
+    let bothSides = sideArea * 2 - window * 2;  //двете страни в м^2
+
+    let backSide = x * x;
+    let bothSidesTotal = backSide * 2 - 1.2 * 2;
+
+    let totalPaintForTheHouse = bothSidesTotal + bothSides;
+    
+    //ПОКРИВ
+    let bothRoofRectagles =  2 * (x * y);
+    let bothRoofTriangles = 2 * (x * h / 2);
+    let totalPaintForTheRoof = bothRoofRectagles + bothRoofTriangles; 
+
+
+    let totalPaintForTheHousInLitters = totalPaintForTheHouse /  PAINT_GREEN_PER_SQUAD_METTER;
+    let totalPaintForTheRoofInLitters = totalPaintForTheRoof / PAINT_RED_PER_SQUAD_METTER;
+
+
+    console.log(Number(totalPaintForTheHousInLitters).toFixed(2));
+    
+    console.log(Number(totalPaintForTheRoofInLitters).toFixed(2));
+
+
+
+}
