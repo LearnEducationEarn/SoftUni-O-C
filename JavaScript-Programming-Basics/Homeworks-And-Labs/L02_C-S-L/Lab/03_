@@ -1,0 +1,7 @@
+function greaterNumber(input){
+    let number1 = Number(input[0]);
+    let number2 = Number(input[1]);
+
+    console.log(Math.max(number1, number2));
+
+}
