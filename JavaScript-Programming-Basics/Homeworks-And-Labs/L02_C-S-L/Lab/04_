@@ -1,0 +1,10 @@
+function  passwordGuess(input) {
+    const PASSWORD = "s3cr3t!P@ssw0rd";
+    let userInputPassword = input[0];
+
+    if (PASSWORD === userInputPassword) {
+        console.log("Welcome");
+    } else {
+        console.log("Wrong password!");
+    }
+}
