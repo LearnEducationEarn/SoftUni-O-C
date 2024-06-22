@@ -1,0 +1,37 @@
+function toyShop(input) {
+    const PUZZLE_PRICE = 2.60;
+    const TALKING_DOLL_PRICE = 3;
+    const PLUSH_BEAR_PRICE = 4.10;
+    const MINION_PRICE = 8.20;
+    const TRUCK_PRICE = 2;
+
+    let tripPrice = Number(input[0]);
+    let countPuzzles = Number(input[1]);
+    let countTalkingDolls = Number(input[2]);
+    let countPlushBears = Number(input[3]);
+    let countMinions = Number(input[4]);
+    let countTrucks = Number(input[5]);
+    
+    let diff = 0;
+
+    let totalPrice = countPuzzles * PUZZLE_PRICE + countTalkingDolls * TALKING_DOLL_PRICE + countPlushBears * PLUSH_BEAR_PRICE + countMinions * MINION_PRICE + countTrucks * TRUCK_PRICE;
+
+    let totalCountToys = countPuzzles + countTalkingDolls + countPlushBears + countMinions + countTrucks;
+
+
+    if (totalCountToys >= 50) {
+        totalPrice = totalPrice * 0.75;
+     }
+
+     totalPrice = totalPrice * 0.90;
+
+
+    if (totalPrice >= tripPrice) {
+        diff = Math.abs(totalPrice - tripPrice);
+        console.log(`Yes! ${Number(diff).toFixed(2)} lv left.`)
+    } else {
+        diff =  Math.abs(totalPrice - tripPrice);
+        console.log(`Not enough money! ${Number(diff).toFixed(2)} lv needed.`)
+
+    }
+}
