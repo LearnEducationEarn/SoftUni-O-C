@@ -1,0 +1,25 @@
+function godzillaVsKong(input) {
+    let budget = Number(input[0]);
+    let countExtras = Number(input[1]);
+    let priceClothing = Number(input[2]);
+
+    let sumDecor = budget * 0.10;
+    let sumClothing = priceClothing * countExtras;
+
+    if (countExtras > 150) {
+        sumClothing = sumClothing - 0.10 * sumClothing;
+
+    } 
+        totalSum = sumDecor + sumClothing;
+ 
+        if (totalSum > budget) {
+            console.log("Not enough money!");
+            console.log(`Wingard needs ${Number(totalSum - budget).toFixed(2)} leva more.`);
+
+            
+        } else {
+            
+            console.log("Action!");
+            console.log(`Wingard starts filming with ${Number(budget - totalSum).toFixed(2)} leva left.`)
+        }
+}
