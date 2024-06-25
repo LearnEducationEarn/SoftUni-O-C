@@ -1,0 +1,26 @@
+function shopping(input) {
+    let budget = Number(input[0]);
+    let countVideoCards = Number(input[1]);
+    let countProcessors = Number(input[2]);
+    let countRam = Number(input[3]);
+
+    const VIDEO_PRICE = 250 * countVideoCards;
+    const PROCESSOR_PRICE = VIDEO_PRICE * 0.35 *  countProcessors;
+    const RAM_PRICE = VIDEO_PRICE * 0.10 * countRam
+
+    let totalPrice = VIDEO_PRICE + PROCESSOR_PRICE + RAM_PRICE;
+
+    let bonus = 0;
+   
+
+    if (countVideoCards > countProcessors) {
+        bonus = totalPrice * 0.15;
+    }
+    
+    let diff = Math.abs(budget - (totalPrice - bonus));
+    if (budget >= totalPrice) {
+        console.log(`You have ${Number(diff).toFixed(2)} leva left!`);
+    } else {
+        console.log(`Not enough money! You need ${Number(diff).toFixed(2)} leva more!`);
+    }
+}
