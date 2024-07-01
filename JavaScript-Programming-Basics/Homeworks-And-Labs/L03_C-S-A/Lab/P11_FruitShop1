@@ -1,0 +1,54 @@
+function fruitShop(input) {
+    let product = input[0];
+    let day = input[1];
+    let quantity = Number(input[2]);
+
+    let daysOfWeek = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];              //масив от дните в седмицата(работните дни)
+    let weekendDays = ["Saturday", "Sunday"];                                              //масив от почивните дни
+   
+    let price = 0;
+
+    if (daysOfWeek.includes(day)) {
+        if (product === "banana") {
+            price = quantity * 2.50;
+        } else if (product === "apple") {
+            price = quantity * 1.20;
+        } else if (product === "orange") {
+            price = quantity * 0.85
+        } else if (product === "grapefruit") {
+            price = quantity * 1.45;
+        } else if (product === "kiwi") {
+            price = quantity * 2.70;
+        } else if (product === "pineapple") {
+            price = quantity * 5.50;
+        } else if (product === "grapes") {
+            price = quantity * 3.85;
+        } else {
+            console.log("error");
+            return;
+        }
+    } else if (weekendDays.includes(day)) {
+        if (product === "banana") {
+            price = quantity * 2.70;
+        } else if (product === "apple") {
+            price = quantity * 1.25;
+        } else if (product === "orange") {
+            price = quantity * 0.90
+        } else if (product === "grapefruit") {
+            price = quantity * 1.60;
+        } else if (product === "kiwi") {
+            price = quantity * 3.00;
+        } else if (product === "pineapple") {
+            price = quantity * 5.60;
+        } else if (product === "grapes") {
+            price = quantity * 4.20;
+        } else {
+            console.log("error");
+            return;
+        }
+        } else {
+            console.log("error");
+            return;
+        }
+        console.log(Number(price).toFixed(2));
+}
