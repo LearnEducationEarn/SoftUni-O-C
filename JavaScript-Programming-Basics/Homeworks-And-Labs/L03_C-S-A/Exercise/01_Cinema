@@ -1,0 +1,25 @@
+function cinema(input) {
+    let projectionType = input[0];
+    let rows = Number(input[1]);
+    let columns = Number(input[2]);
+
+    const PREMIERE_PROJECTION = 12.00;
+    const NORMAL_PROJECTION = 7.50;
+    const DISCOUNT_PROJECTION = 5.00;
+
+
+    let income = 0;
+
+    if (projectionType === "Premiere") {
+        income = rows * columns * PREMIERE_PROJECTION;
+
+    } else if (projectionType === "Normal") {
+        income = rows * columns * NORMAL_PROJECTION;
+    
+    } else {
+        income = rows * columns * DISCOUNT_PROJECTION;    
+    
+    }
+    console.log(`${Number(income).toFixed(2)} leva`);
+
+ 
