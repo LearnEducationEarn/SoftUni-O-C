@@ -1,0 +1,39 @@
+function summerOutfit(input) {
+    let temperature = Number(input[0]);
+    let dayOfTime = input[1];
+
+    let outfit = "";
+    let shoes = "";
+
+    if (temperature <= 18) {
+        if (dayOfTime === "Morning") {
+            outfit = "Sweatshirt";
+            shoes = "Sneakers";
+        } else if (dayOfTime === "Afternoon" || dayOfTime === "Evening") {
+            outfit = "Shirt";
+            shoes = "Moccasins";
+        }
+    } else if (temperature <= 24) {
+        if (dayOfTime === "Morning" || dayOfTime === "Evening") {
+            outfit = "Shirt";
+            shoes = "Moccasins";
+
+        } else if (dayOfTime === "Afternoon") {
+            outfit = "T-Shirt";
+            shoes = "Sandals";
+         }
+    } else {
+        if (dayOfTime === "Morning") {
+            outfit = "T-Shirt";
+            shoes = "Sandals";
+        } else if (dayOfTime === "Afternoon") {
+            outfit = "Swim Suit";
+            shoes = "Barefoot";
+        } else if (dayOfTime === "Evening") {
+            outfit = "Shirt";
+            shoes = "Moccasins";
+
+        }
+    }  
+         console.log(`It's ${temperature} degrees, get your ${outfit} and ${shoes}.`);
+}
