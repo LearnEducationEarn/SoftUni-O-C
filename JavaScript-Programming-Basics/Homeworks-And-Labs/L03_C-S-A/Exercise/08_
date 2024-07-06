@@ -1,0 +1,50 @@
+function onTimeForTheExam(input) {
+    let examHour = Number(input[0]);               //час на изпита:  0/h - 23/h
+    let examMinute = Number(input[1]);             //минута на изпита: 0 - 59
+    let arrivalHour = Number(input[2]);            //час на пристигане: 0/h - 23/h
+    let arrivalMinute = Number(input[3]);          //минута на пристигане: 0 - 59
+
+    let examHourInMinutes = (examHour * 60) + examMinute;
+    let arrivalHourInMinutes = (arrivalHour * 60) + arrivalMinute;
+
+
+    let result = examHourInMinutes - arrivalHourInMinutes;
+
+    if (result < 0) {
+        console.log("Late");
+     } else if (result <= 30) {
+        console.log("On time");
+       
+    } else {
+        console.log("Early");
+    }
+
+
+    if (result != 0) {
+        let timeDiff =  "";
+        let absoluteDiff = Math.abs(result);
+        if (absoluteDiff < 60) {
+            timeDiff = `${absoluteDiff} minutes`;
+        } else {
+            let diffHours = Math.floor(absoluteDiff / 60);
+            let diffMinutes = absoluteDiff % 60;
+
+            if (diffMinutes < 10) {
+                timeDiff = `${diffHours} :0${diffMinutes} hours`;
+        } else {
+            timeDiff = `${diffHours}:${diffMinutes} hours`;
+        }
+
+    }
+        let keyword = "";
+        if (result < 0) {
+            keyword = "after";
+        } else {
+            keyword = "before";
+        }
+
+            console.log(`${timeDiff} ${keyword} the start`);
+
+
+}   
+}
