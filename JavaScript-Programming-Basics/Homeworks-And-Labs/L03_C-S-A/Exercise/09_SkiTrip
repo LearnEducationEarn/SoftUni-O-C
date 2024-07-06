@@ -1,0 +1,53 @@
+function skiTrip(input) {
+    let nights = Number(input[0]);
+    let roomType = input[1];
+    let rating = input[2];
+
+    nights = nights - 1;
+
+    let roomForOnePerson = 18;
+    let apartment = 25;
+    let presidentApartment = 35;
+
+    let costs = 0; 
+    if (nights < 10){
+        if (roomType === "room for one person"){
+            costs = roomForOnePerson * nights;
+    
+        } else if (roomType === "apartment") {
+            costs = (apartment * nights) * 0.70;
+    
+        } else if (roomType === "president apartment") {
+            costs = (presidentApartment * nights) * 0.90;
+        }
+    } else if (nights >= 10 && nights <= 15) {
+        if (roomType === "room for one person") {
+            costs = roomForOnePerson * nights;
+    
+        } else if (roomType === "apartment") {
+            costs = (apartment * nights) * 0.65;
+    
+        } else if (roomType === "president apartment") {
+            costs = (presidentApartment * nights) * 0.85;
+        }
+    } else {
+        if (roomType === "room for one person") {
+            costs = roomForOnePerson * nights;
+    
+        } else if (roomType === "apartment") {
+            costs = (apartment * nights) * 0.50;
+    
+        } else if (roomType === "president apartment") {
+            costs = (presidentApartment * nights) * 0.80;
+        }
+ }
+
+    if (rating === "positive") {
+            costs = costs + (costs * 0.25);
+   
+    } else {
+            costs = costs - (costs * 0.10);
+    }
+        console.log(Number(costs).toFixed(2));
+
+}
