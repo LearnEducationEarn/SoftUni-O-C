@@ -1,0 +1,7 @@
+function characterSequence(input) {
+    let text = input[0];
+
+    for (const letter of text) {
+        console.log(letter);
+    }
+}
