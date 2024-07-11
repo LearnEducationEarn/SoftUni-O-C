@@ -1,0 +1,19 @@
+function numbersDivisibleByNine(input) {
+    let startNumber = Number(input[0]);
+    let endNumber = Number(input[1]);
+
+    let sumOfDigits = 0;
+    let result = "";
+    for (let n = startNumber; n <= endNumber; n++) {
+        if (n % 9 == 0){
+          sumOfDigits += n;          
+          result += n.toString() + "\n";
+        
+        }
+ }
+    console.log("The sum:", sumOfDigits);
+    console.log(result)
+    
+    
+
+}
