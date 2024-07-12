@@ -1,0 +1,10 @@
+function multiplicationTable(input) {
+    let number = Number(input[0]);
+    
+    for (let n = 1; n <= 10; n++) {
+        let multiplication = n * number;
+
+        console.log(`${n} * ${number} = ${multiplication}`);
+
+    }
+}
