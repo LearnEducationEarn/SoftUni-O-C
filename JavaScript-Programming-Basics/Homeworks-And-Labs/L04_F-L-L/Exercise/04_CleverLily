@@ -1,0 +1,32 @@
+function cleverLily(input) {
+    let age = Number(input[0]);
+    let priceForWashingMachine = Number(input[1]);
+    let unitPricePerToy = Number(input[2]);
+
+    let savedMoney = 0;
+    let countToys = 0;
+    let counter = 0;
+
+    for (let year = 1; year <= age; year++) {
+
+        if (year % 2 == 0) {
+            counter++;
+            
+            savedMoney += (10 * counter) - 1;
+        } else {
+            countToys++;
+
+        }
+    }
+    let total = savedMoney + (countToys * unitPricePerToy);
+
+    let diff = Math.abs(total - priceForWashingMachine);
+    if (total < priceForWashingMachine) {
+        console.log(`No! ${Number(diff).toFixed(2)}`);
+
+    } else {
+        console.log(`Yes! ${Number(diff).toFixed(2)}`);
+
+    }
+    
+}
