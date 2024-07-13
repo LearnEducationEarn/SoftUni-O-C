@@ -1,0 +1,19 @@
+function cleverLily(input) {
+    let age = Number(input[0]);
+    let priceForWashingMachine = Number(input[1]);
+    let unitPricePerToy = Number(input[2]);
+
+    let oddBirthdays = Math.ceil(age / 2);
+    let evenBirthdays = Math.floor(age / 2);
+
+    //Arithmetic progression
+    let savedMoney = oddBirthdays * unitPricePerToy + evenBirthdays * (9 + evenBirthdays * 10 - 1) / 2;
+
+    if (savedMoney >= priceForWashingMachine) {
+        console.log(`Yes! ${Number(savedMoney - priceForWashingMachine).toFixed(2)}`);
+    } else {
+        console.log(`No! ${Number(priceForWashingMachine - savedMoney).toFixed(2)}`);
+    }
+
+
+}
