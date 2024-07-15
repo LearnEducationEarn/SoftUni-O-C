@@ -1,1 +1,31 @@
+function oscars(input) {
+    const NOMINATION_POINTS = 1250.5;
 
+    let name = input[0];
+    let academyPoints = Number(input[1]);
+    let numberOfAssessors = Number(input[2]);
+
+    let points = academyPoints; 
+
+    for (let i = 0; i < numberOfAssessors; i++) {
+        let assessorName = input[3 + i * 2];
+        let assessorPoints = Number(input[4 + i * 2]);
+
+        points += assessorName.length * assessorPoints / 2;
+
+        if (points > NOMINATION_POINTS) {
+            break;
+        }
+    }
+
+        if (points > NOMINATION_POINTS) {
+            console.log(`Congratulations, ${name} got a nominee for leading role with ${points.toFixed(1)}!`);
+        } else {
+            let diff = NOMINATION_POINTS - points;
+            console.log(`Sorry, ${name} you need ${diff.toFixed(1)} more!`);
+        }
+
+
+
+
+}
