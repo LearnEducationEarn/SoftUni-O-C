@@ -1,0 +1,15 @@
+function readText(input) {
+    let index = 0;
+
+    while (true) {
+        let currentWord = input[index++];
+
+        if (word === "Stop") {
+            break;
+        }
+
+        console.log(currentWord);
+
+    }
+
+}
