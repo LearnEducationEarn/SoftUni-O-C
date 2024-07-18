@@ -1,0 +1,47 @@
+function solve(input) {
+    let weight = Number(input[0]);
+    let type = input[1];
+    let lengthInKilometers = Number(input[2]);
+
+
+    let coins = 0;
+    let markup = 0;
+    
+    if (type === "standard") {
+        if (weight < 1) {
+            coins = 0.03;
+        } else if (weight >= 1 && weight < 10) {
+            coins = 0.05;
+        } else if (weight >= 10 && weight < 40) {
+            coins = 0.10;
+        } else if (weight >= 40 && weight < 90) {
+            coins = 0.15;
+        } else if (weight >= 90 && weight < 150) {
+            coins = 0.20;
+        }
+ 
+    } else if (type === "express") {
+        if (weight < 1) {
+            coins = 0.80;
+        } else if (weight >= 1 && weight < 10) {
+            coins = 0.40;
+        } else if (weight >= 10 && weight < 40) {
+            coins = 0.05;
+        } else if (weight >= 40 && weight < 90) {
+            coins = 0.15 * 0.02;
+        } else if (weight >= 90 && weight < 150) {
+            coins = 0.01;
+        }
+        let transportPrice = lengthInKilometers * 0.15;
+        markup = weight * coins; //261
+        let totalMarkup = lengthInKilometers * markup; //33.93
+        let total = transportPrice + totalMarkup;
+        console.log(`The delivery of your shipment with weight of ${Number(weight).toFixed(3)} kg. would cost ${Number(total).toFixed(2)} lv.`);
+        return;
+                 
+    }
+        
+        let totalPrice =  coins * lengthInKilometers;
+
+        console.log(`The delivery of your shipment with weight of ${Number(weight).toFixed(3)} kg. would cost ${Number(totalPrice).toFixed(2)} lv.`);
+} 
