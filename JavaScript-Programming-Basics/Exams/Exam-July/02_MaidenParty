@@ -1,0 +1,35 @@
+function solve(input) {
+    let maidenPartyPrice = Number(input[0]);
+    let numberOfMessages = Number(input[1]);
+    let numberOfRoses = Number(input[2]);
+    let numberOfKeyChains = Number(input[3]);
+    let numberOfCartoons = Number(input[4]);
+    let numberOfLuckSurprice = Number(input[5]);
+
+    const MESSAGES = 0.60;
+    const ROSE = 7.20;
+    const KEY_CHAIN = 3.60;
+    const CARTOONS = 18.20;
+    const LUCK_SURPRICE = 22;
+
+    let discount = 0;
+
+    let totalSum = numberOfMessages * MESSAGES + numberOfRoses * ROSE + numberOfKeyChains * KEY_CHAIN + numberOfCartoons * CARTOONS + numberOfLuckSurprice * LUCK_SURPRICE;
+    let countItems = numberOfMessages + numberOfRoses + numberOfKeyChains + numberOfCartoons + numberOfLuckSurprice;
+
+    if (countItems >= 25) {
+        discount = totalSum * 0.35;
+    }
+
+    let totalPrice = totalSum - discount;
+    let costsForHosting = totalPrice * 0.10;
+    let total = totalPrice - costsForHosting;
+
+    if (total > maidenPartyPrice) {
+        
+        console.log(`Yes! ${Number(total - maidenPartyPrice).toFixed(2)} lv left.`);
+    } else {
+        console.log(`Not enough money! ${Number(maidenPartyPrice - total).toFixed(2)} lv needed.`);
+    }
+    
+}
