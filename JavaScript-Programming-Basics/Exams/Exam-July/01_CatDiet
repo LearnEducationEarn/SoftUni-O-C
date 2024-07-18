@@ -1,0 +1,33 @@
+function solve(input) {
+    const percentFats = Number(input[0]);
+    const percentProteins = Number(input[1]);
+    const percentCarbohydrates = Number(input[2]);
+    const totalNumberOfCalories = Number(input[3]);
+    const percentWater = Number(input[4]);
+
+    const CALORIES_IN_ONE_GRAM_FATS = 9;
+    const CALORIES_IN_ONE_GRAM_PROTEINS = 4;
+    const CALORIES_IN_ONE_GRAM_CARBOHYDRATES = 4;
+
+
+
+    let totalGramsFats = (totalNumberOfCalories * (percentFats / 100)) / CALORIES_IN_ONE_GRAM_FATS;
+    let totalGramsProteins = (totalNumberOfCalories * (percentProteins / 100)) / CALORIES_IN_ONE_GRAM_PROTEINS;
+    let totalGramsCarbohydrates = (totalNumberOfCalories * (percentCarbohydrates / 100)) / CALORIES_IN_ONE_GRAM_CARBOHYDRATES;
+
+    let foodWeight = totalGramsFats + totalGramsProteins + totalGramsCarbohydrates;
+    let caloriesPerGram = totalNumberOfCalories / foodWeight;
+    
+    
+    
+    let waterContent = caloriesPerGram * (percentWater / 100);
+    let percent = 100 - (waterContent / caloriesPerGram) * 100;
+    let perGram = caloriesPerGram * percent / 100;
+
+
+    console.log(Number(perGram).toFixed(4));
+
+
+
+
+}
