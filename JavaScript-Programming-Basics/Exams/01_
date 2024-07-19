@@ -1,0 +1,32 @@
+function safari(input) {
+   
+    let budget = Number(input[0]);
+    let neededLittersFuel = Number(input[1]);
+    let dayOfWeek = input[2];
+
+
+    const PRICE_PER_LITER_FUEL = 2.10;
+    const PRICE_FOR_TOUR_GUIDE = 100;
+    const SATURDAY_DISCOUNT = 10 / 100;
+    const SUNDAY_DISCOUNT = 20 / 100;
+
+    let fuelPrice = neededLittersFuel * PRICE_PER_LITER_FUEL;
+    let total = fuelPrice + PRICE_FOR_TOUR_GUIDE;
+
+    switch (dayOfWeek){
+        case "Saturday":
+            total = total - total * SATURDAY_DISCOUNT;
+            break;
+        case "Sunday":
+            total = total - total * SUNDAY_DISCOUNT; 
+            break;
+    }
+
+    if (total > budget) {
+        console.log(`Not enough money! Money needed: ${Number(total - budget).toFixed(2)} lv.`);
+    } else {
+        console.log(`Safari time! Money left: ${Number(budget - total).toFixed(2)} lv.`);
+    }
+
+
+}
