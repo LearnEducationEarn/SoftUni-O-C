@@ -1,0 +1,58 @@
+function mobileOperator(input) {
+    let contractTerm = input[0];
+    let contractType = input[1];
+    let mobileNetAdded = input[2];
+    let numberOfMonths = Number(input[3]);
+
+    let monthlyFee = 0;
+    
+ 
+    switch (contractTerm) {
+        case "one":
+            if (contractType === "Small") {
+                monthlyFee = 9.98;
+            } else if (contractType === "Middle") {
+                monthlyFee = 18.99;
+            } else if (contractType === "Large") {
+                monthlyFee = 25.98;
+            } else if (contractType === "ExtraLarge") {
+                monthlyFee = 35.99;
+            }
+            break;
+            case "two":
+            if (contractType === "Small") {
+                monthlyFee = 8.58;
+            } else if (contractType === "Middle") {
+                monthlyFee = 17.09;
+            } else if (contractType === "Large") {
+                monthlyFee = 23.59 ;
+            } else if (contractType === "ExtraLarge") {
+                monthlyFee = 31.79;
+            }
+            break;
+
+        }
+    if (mobileNetAdded === "yes") {
+        if (monthlyFee <=  10) {
+            monthlyFee += 5.50;
+       
+        } else if (monthlyFee <= 30) {
+            monthlyFee += 4.35;
+       
+        } else {
+            monthlyFee += 3.85;
+      
+        }   
+  } 
+  
+        let totalPrice = monthlyFee * numberOfMonths;
+    
+    if (contractTerm === "two") {
+        totalPrice = totalPrice - (totalPrice * (3.75 / 100));
+    
+  }
+
+
+    console.log(`${Number(totalPrice).toFixed(2)} lv.`);
+
+}
