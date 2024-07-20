@@ -1,1 +1,24 @@
+function solve(input) {
+    
+    let shipWidth = Number(input[0]);
+    let shipLength = Number(input[1]);
+    let shipHeight = Number(input[2]);
+    let averageAstronautsHeight = Number(input[3]);
 
+
+    let rocketVolume = shipWidth * shipLength * shipHeight;
+    let roomVolume = (averageAstronautsHeight + 0.40) * 2 * 2;
+    let numberOfAstronauts = Math.floor(rocketVolume / roomVolume);
+
+    
+    if (numberOfAstronauts < 3) {
+        console.log("The spacecraft is too small."); 
+
+    } else if (numberOfAstronauts >= 3 && numberOfAstronauts <= 10) {
+        console.log(`The spacecraft holds ${numberOfAstronauts} astronauts.`);
+        
+    } else if (numberOfAstronauts > 10) {
+        console.log("The spacecraft is too big.");
+  
+    }
+}
