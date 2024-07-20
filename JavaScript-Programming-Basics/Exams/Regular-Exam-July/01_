@@ -1,1 +1,17 @@
+function solve(input) {
+    let averageSpeed = Number(input[0]);
+    let litersFuel = Number(input[1]);
 
+    const TOTAL_LENGTH_TO_THE_MOON = 384400;
+    const STAY_TIME = 3;
+
+    let totalLenth = TOTAL_LENGTH_TO_THE_MOON * 2;
+    let roundTripTime = Math.ceil(totalLenth / averageSpeed);
+    let totalTime = roundTripTime + STAY_TIME;
+    let fuel = (litersFuel * totalLenth) / 100;
+
+    console.log(totalTime);
+    console.log(fuel);
+
+
+}
