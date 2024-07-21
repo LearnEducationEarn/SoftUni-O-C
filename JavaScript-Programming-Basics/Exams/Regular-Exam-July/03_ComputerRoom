@@ -1,0 +1,40 @@
+function solve(input) {
+
+    let month = input[0];
+    let numberOfHours = Number(input[1]);
+    let numberOfPeopleInGroup = Number(input[2]);
+    let dayTime = input[3];
+
+    let price = 0;
+    switch (month) {
+        case "march":
+        case "april":
+        case "may":
+            if (dayTime === "day") {
+                price = 10.50;
+            } else {
+                price = 8.40;
+            }
+            break;
+        case "june":
+        case "july":
+        case "august":
+            if (dayTime === "day") {
+                price = 12.60;
+            } else {
+                price = 10.20;
+            }
+             break;
+    }
+
+    if (numberOfPeopleInGroup >= 4) {
+        price = price - price * 0.10;
+    } 
+    if (numberOfHours >= 5) {
+        price = price - price * 0.50;
+    }
+
+    console.log(`Price per person for one hour: ${Number(price).toFixed(2)}`);
+    console.log(`Total cost of the visit: ${Number(numberOfPeopleInGroup * price * numberOfHours).toFixed(2)}`);
+
+}
