@@ -1,0 +1,34 @@
+function solve(input) {
+    let numberOfCats = Number(input.shift());
+    
+    const FOOD_PER_KILOGRAM = 12.45;
+
+    let smallCats = 0;
+    let bigCats = 0;
+    let hugeCats = 0;
+
+    let totalFood = 0;
+
+    for (let i = 1; i <= numberOfCats; i++) {
+        let currentCat = Number(input.shift());
+
+        totalFood += currentCat;
+        if (currentCat >= 100 && currentCat < 200) {
+            
+            smallCats++;
+        } else if (currentCat >= 200 && currentCat < 300) {
+            
+            bigCats++;
+        } else if (currentCat >= 300 && currentCat < 400) {
+            
+            hugeCats++;
+        }        
+    }
+    let totalGrams = totalFood / 1000;
+    let foodPrice = totalGrams * FOOD_PER_KILOGRAM;
+    console.log(`Group 1: ${smallCats} cats.`);
+    console.log(`Group 2: ${bigCats} cats.`);
+    console.log(`Group 3: ${hugeCats} cats.`);
+    console.log(`Price for food per day: ${Number(foodPrice).toFixed(2)} lv.`);
+
+}
