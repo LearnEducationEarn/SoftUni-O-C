@@ -1,1 +1,28 @@
+function solve(input) {
+    
+    let kids = 0
+    let adults = 0;
 
+    let priceForToys = 0;
+    let priceForSweaters = 0
+
+   while (true) {
+    let currentCommand = input.shift();
+    if (currentCommand === "Christmas") {
+        break;
+    }
+    if (currentCommand <= 16) {
+        kids++;
+        priceForToys +=5;
+        //toy = 5 lv.
+    } else {
+        adults++;
+        priceForSweaters += 15;
+        //sweatshirt = 15 lv.
+    }
+   }
+   console.log(`Number of adults: ${adults}`); 
+   console.log(`Number of kids: ${kids}`);
+   console.log(`Money for toys: ${priceForToys}`);
+   console.log(`Money for sweaters: ${priceForSweaters}`); 
+}
