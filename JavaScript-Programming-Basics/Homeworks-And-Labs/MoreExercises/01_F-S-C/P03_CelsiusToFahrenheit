@@ -1,0 +1,7 @@
+function celsiusToFahrenheit(input) {
+    let degrees = Number(input[0]);
+
+    let fahrenheit = degrees * 1.8 + 32;
+
+    console.log(Number(fahrenheit).toFixed(2));
+}
