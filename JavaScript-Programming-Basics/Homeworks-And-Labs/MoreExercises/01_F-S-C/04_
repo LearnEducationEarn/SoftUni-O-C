@@ -1,0 +1,15 @@
+function vegetableMarket(input) {
+    let priceForKilogramVegetables = Number(input[0]);
+    let priceForKilogramFruits = Number(input[1]);
+    let totalKilogramsVegetables = Number(input[2]);
+    let totalKilogramsFruits = Number(input[3]);
+
+    const EUR_BGN = 1.94;
+    
+    let totalVegetables = priceForKilogramVegetables * totalKilogramsVegetables;
+    let totalFruits = priceForKilogramFruits * totalKilogramsFruits;
+    let total = (totalVegetables + totalFruits) / EUR_BGN;
+
+    console.log(Number(total).toFixed(2));
+
+}
