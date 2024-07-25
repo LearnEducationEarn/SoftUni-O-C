@@ -1,0 +1,21 @@
+function fishLand(input) {
+    let priceMackerel = Number(input[0]); //скумрия
+    let priceSprinkle = Number(input[1]); //цаца
+    let kilogramsBonito = Number(input[2]); //паламуд
+    let kilogramsSafrid = Number(input[3]); //сафрид
+    let kilogramsMussels = Number(input[4]); //миди
+
+    let bonitoPrice = priceMackerel + priceMackerel * 0.60;
+    let sumBonito = bonitoPrice * kilogramsBonito;
+
+    let priceSafrid = priceSprinkle + priceSprinkle * 0.80;
+    let sumSafrid = priceSafrid * kilogramsSafrid;
+    
+    let priceMussels = kilogramsMussels * 7.50;
+    
+    let totalSum = sumBonito + sumSafrid + priceMussels;
+
+    console.log(`${Number(totalSum).toFixed(2)}`);
+
+
+}
