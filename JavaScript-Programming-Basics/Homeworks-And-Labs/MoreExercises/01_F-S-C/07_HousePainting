@@ -1,0 +1,31 @@
+function housePainting(input) {
+    let height = Number(input[0]);
+    let length = Number(input[1]);
+    let triangleHeight = Number(input[2]);
+
+    const ONE_LITER_RED_PAINT_SQUAD_METERS = 4.3;
+    const ONE_LITER_GREEN_PAINT_SQUAD_METERS = 3.4;
+
+
+    let door = 1.2 * 2;
+    let window = 1.5 * 1.5;
+
+    let side = height * length;
+    let bothSides = 2 * side - 2 * window;
+
+    let backSide = height * height;
+    let total = 2 * backSide - door;
+    let totalHouse = bothSides + total;
+
+    let greenPaint = totalHouse / ONE_LITER_GREEN_PAINT_SQUAD_METERS;
+
+    let bothRectangles = 2 * ( height * length);
+    let bothTriangles = 2 * (triangleHeight * height / 2);
+    let totalRoof = bothRectangles + bothTriangles;
+
+    let redPaint = totalRoof / ONE_LITER_RED_PAINT_SQUAD_METERS;
+
+    console.log(`${Number(greenPaint).toFixed(2)}`);
+    console.log(`${Number(redPaint).toFixed(2)}`);
+
+}
