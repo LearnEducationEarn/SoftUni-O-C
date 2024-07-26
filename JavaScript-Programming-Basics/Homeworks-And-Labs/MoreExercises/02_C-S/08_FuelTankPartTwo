@@ -1,0 +1,42 @@
+function fuelTankPartTwo(input) {
+    let typeFuel = input[0];
+    let quantityFuel = Number(input[1]);
+    let clubCard = input[2];
+
+    const GASOLINE = 2.22;
+    const DIESEL = 2.33;
+    const GAS = 0.93;
+
+    let total = 0;
+    if (clubCard === "Yes") {
+        if (typeFuel === "Gasoline") {
+            total = quantityFuel * (GASOLINE - 0.18);
+
+        } else if (typeFuel === "Diesel") {
+            total = quantityFuel * (DIESEL - 0.12);
+
+        } else if (typeFuel === "Gas") {
+            total = quantityFuel * (GAS - 0.08);
+
+        }
+    } else if (clubCard === "No") {
+        if (typeFuel === "Gasoline") {
+            total = quantityFuel * GASOLINE;
+
+        } else if (typeFuel === "Diesel") {
+            total = quantityFuel * DIESEL;
+
+        } else if (typeFuel === "Gas") {
+            total = quantityFuel * GAS;
+
+        }
+}
+    if (quantityFuel >= 20 && quantityFuel <= 25) {
+        total = total - total * 0.08;
+    } else if (quantityFuel > 25) {
+        total = total - total * 0.10;
+    }
+
+    console.log(`${Number(total).toFixed(2)} lv.`);
+
+}
