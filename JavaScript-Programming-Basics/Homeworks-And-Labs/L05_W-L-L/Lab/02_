@@ -1,0 +1,13 @@
+function password(input) {
+    let username = input.shift();        //ще ни вземе първия елемент и ще го премахне
+    let password = input.shift();
+
+    while (true) {
+        let currentPass = input.shift();
+
+        if (currentPass === password) {
+            console.log(`Welcome ${username}!`);
+            break;
+        }
+    }
+}
