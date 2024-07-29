@@ -1,0 +1,32 @@
+function graduation(input) {
+    const TOTAL_CLASSES = 12;
+    const UNPLEASING_GRADE = 4;
+
+
+    let name = input.shift();
+
+    let currentClass = 1;
+    let failedTimes = 0;
+    let gradesSum = 0;
+
+    while (input.length > 0) {
+        let grade = Number(input.shift());
+
+        if (grade < UNPLEASING_GRADE) {
+            failedTimes++;
+           
+            if (failedTimes > 1) {
+                console.log(`${name} has been excluded at ${currentClass} grade`);
+                break;
+      }
+        } else {
+            gradesSum += grade;
+            currentClass++;
+        }   
+        if (currentClass > TOTAL_CLASSES) {
+            let averageGrade = gradesSum / TOTAL_CLASSES;
+            console.log(`${name} graduated. Average grade: ${averageGrade.toFixed(2)}`);
+            break;
+        }
+ }
+}
