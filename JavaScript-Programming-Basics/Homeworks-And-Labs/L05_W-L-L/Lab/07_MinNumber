@@ -1,0 +1,17 @@
+function minNumber(input) {
+    let minNum = Number.POSITIVE_INFINITY;
+
+    while (input.length > 0) {
+        let command = input.shift();
+
+        if (command === "Stop"){
+            break;
+        }
+        let number = Number(command);
+
+        if (number < minNum) {
+            minNum = number;
+        }
+    }    
+    console.log(minNum);
+}
