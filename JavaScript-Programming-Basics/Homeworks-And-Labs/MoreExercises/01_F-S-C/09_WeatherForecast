@@ -1,0 +1,14 @@
+function  weatherForecast(input) {
+    let text = input[0];
+
+    let weather = "";
+
+    if (text === "sunny") {
+        weather = "It's warm outside!";
+    } else {
+        weather = "It's cold outside!";
+    }
+
+        console.log(weather);
+
+}
