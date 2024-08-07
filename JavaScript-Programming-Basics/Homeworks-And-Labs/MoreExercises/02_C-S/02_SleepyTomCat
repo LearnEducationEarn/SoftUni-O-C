@@ -1,0 +1,29 @@
+function sleepyTomCat(input) {
+    let numberOfFreeDays = Number(input[0]);
+
+    const RATE_OF_PLAY = 30000;
+    const AT_WORK = 63;
+    const FREE_DAY = 127;
+
+    let totalPlay = numberOfFreeDays * FREE_DAY;
+    let workingDays = (365 - numberOfFreeDays) * AT_WORK;
+    let total = totalPlay + workingDays;
+
+    let diff = 0;
+    let diffInHours = 0;
+    let diffInMinutes = 0;
+
+    if (RATE_OF_PLAY < total) {
+         diff = total - RATE_OF_PLAY;
+         diffInHours = Math.floor(diff / 60);
+         diffInMinutes = diff % 60;
+        console.log("Tom will run away");
+        console.log(`${diffInHours} hours and ${diffInMinutes} minutes more for play`);
+    } else {
+         diff = RATE_OF_PLAY - total;
+         diffInHours = Math.floor(diff / 60);
+         diffInMinutes = diff % 60;
+        console.log("Tom sleeps well");
+        console.log(`${diffInHours} hours and ${diffInMinutes} minutes less for play`);
+    }
+}
