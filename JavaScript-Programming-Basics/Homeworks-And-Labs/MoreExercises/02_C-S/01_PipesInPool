@@ -1,0 +1,20 @@
+function pipesInPool(input) {
+    let volume = Number(input[0]);
+    let p1 = Number(input[1]);
+    let p2 = Number(input[2]);
+    let hours = Number(input[3]);
+
+    let litersP1 = p1 * hours;
+    let litersP2 = p2 * hours;
+    let total = litersP1 + litersP2;
+
+    if (total <= volume) {
+        let litersInPercent = (total / volume) * 100;
+
+        let percentP1 = (litersP1 / total) * 100;
+        let percentP2 = (litersP2 / total) * 100;
+        console.log(`The pool is ${litersInPercent}% full. Pipe 1: ${Number(percentP1).toFixed(2)}%. Pipe 2: ${Number(percentP2).toFixed(2)}%.`)
+    } else {
+        console.log(`For ${hours} hours the pool overflows with ${total - volume} liters.`);
+    }
+}
