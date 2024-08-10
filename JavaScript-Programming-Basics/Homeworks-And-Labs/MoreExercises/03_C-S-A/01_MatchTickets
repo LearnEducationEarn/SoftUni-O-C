@@ -1,0 +1,39 @@
+function matchTickets(input) {
+    let budget = Number(input[0]);
+    let category = input[1];
+    let numberOfPeopleInGroup = Number(input[2]);
+
+    const VIP = 499.99;
+    const NORMAL = 249.99;
+
+    let transportCosts = 0;
+    let price = 0;
+    if (numberOfPeopleInGroup >= 1 && numberOfPeopleInGroup <= 4) {
+        transportCosts = budget * 0.75;
+        budget -= transportCosts;
+    } else if (numberOfPeopleInGroup >= 5 &&  numberOfPeopleInGroup <= 9) {
+        transportCosts = budget * 0.60;
+        budget -= transportCosts;
+    } else if (numberOfPeopleInGroup >= 10 && numberOfPeopleInGroup <= 24) {
+        transportCosts = budget * 0.50;
+        budget -= transportCosts;
+    } else if (numberOfPeopleInGroup >= 25 && numberOfPeopleInGroup <= 49) {
+        transportCosts = budget * 0.40;
+        budget -= transportCosts;
+    } else if (numberOfPeopleInGroup > 50) {
+        transportCosts = budget * 0.25;
+        budget -= transportCosts;
+    }
+    if (category === "VIP") {
+            price = numberOfPeopleInGroup * VIP;
+            budget -= price;
+        } else {
+            price = numberOfPeopleInGroup * NORMAL;
+            budget -= price;
+        }
+    if (budget >= 0) {
+        console.log(`Yes! You have ${Number(budget).toFixed(2)} leva left.`);
+    } else {    
+        console.log(`Not enough money! You need ${Number(Math.abs(budget)).toFixed(2)} leva.`);
+    }
+}
