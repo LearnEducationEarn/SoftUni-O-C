@@ -1,0 +1,27 @@
+function bikeRace(input) {
+    let numberOfJuniors = Number(input[0]);
+    let numberOfSeniors = Number(input[1]);
+    let typeRoute = input[2];
+   
+    let priceJuniors = 0;
+    let priceSeniors = 0;
+    if (typeRoute === "trail") {
+        priceJuniors = numberOfJuniors * 5.50;
+        priceSeniors = numberOfSeniors * 7;
+    } else if (typeRoute === "cross-country") {
+        priceJuniors = numberOfJuniors * 8;
+        priceSeniors = numberOfSeniors * 9.50;
+    } else if (typeRoute === "downhill") {
+        priceJuniors = numberOfJuniors * 12.25;
+        priceSeniors = numberOfSeniors * 13.75;
+    } else if (typeRoute === "road") {
+        priceJuniors = numberOfJuniors * 20;
+        priceSeniors = numberOfSeniors * 21.50;
+    }
+    let totalSum = priceJuniors + priceSeniors;
+    if (typeRoute === "cross-country" && numberOfJuniors + numberOfSeniors >= 50) {
+        totalSum = totalSum * 0.75;
+    }
+    let total = totalSum * 0.95;
+    console.log(Number(total).toFixed(2));
+}
