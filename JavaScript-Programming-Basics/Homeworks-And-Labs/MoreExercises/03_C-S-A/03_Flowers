@@ -1,0 +1,36 @@
+function flowers(input) {
+    let numberOfChrysanthemums = Number(input[0]);
+    let numberOfRoses = Number(input[1]);
+    let numberOfTulips = Number(input[2]);
+    let season = input[3];
+    let holiday = input[4];
+
+    let priceChrysanthemums = 0;
+    let priceRoses = 0;
+    let priceTulips = 0; 
+    if (season === "Spring" || season === "Summer") {
+        priceChrysanthemums = numberOfChrysanthemums * 2.00;
+        priceRoses = numberOfRoses * 4.10;
+        priceTulips = numberOfTulips * 2.50;
+
+    } else if (season === "Autumn" || season == "Winter") {
+        priceChrysanthemums = numberOfChrysanthemums * 3.75;
+        priceRoses = numberOfRoses * 4.50;
+        priceTulips = numberOfTulips * 4.15;
+    }
+        let totalFlowersPrice = priceChrysanthemums + priceRoses + priceTulips; 
+    if (holiday === "Y") {
+        totalFlowersPrice = totalFlowersPrice + totalFlowersPrice * 0.15;
+    }
+        if (numberOfTulips > 7 && season === "Spring") {
+            totalFlowersPrice = totalFlowersPrice - totalFlowersPrice * 0.05;
+        } 
+        if (numberOfRoses >= 10 && season === "Winter") {
+           totalFlowersPrice = totalFlowersPrice - totalFlowersPrice * 0.10;
+        }
+        if (numberOfChrysanthemums + numberOfRoses + numberOfTulips > 20) {
+            totalFlowersPrice *= 0.80;
+        }
+            let total = totalFlowersPrice + 2;
+            console.log(Number(total).toFixed(2));
+}
