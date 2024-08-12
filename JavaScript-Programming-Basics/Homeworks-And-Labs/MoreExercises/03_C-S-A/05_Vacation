@@ -1,0 +1,40 @@
+function vacation(input) {
+    let budget = Number(input[0]);
+    let season = input[1];
+
+    let typeAccommodation = "";
+    let location = "";
+    let price = 0;
+    
+    if (budget <= 1000) {
+        typeAccommodation = "Camp";
+        if (season === "Summer") {
+            price = budget * 0.65;
+            location = "Alaska";
+        } else if (season === "Winter") {
+            price = budget * 0.45;
+            location = "Morocco";
+        }
+    } else if (budget > 1000 && budget <= 3000) {
+        typeAccommodation = "Hut";
+        if (season === "Summer") {
+            price = budget * 0.80;
+            location = "Alaska";
+        } else if (season === "Winter") {
+            price = budget * 0.60;
+            location = "Morocco";
+        }
+    } else if (budget > 3000) {
+        typeAccommodation = "Hotel";
+        price = budget * 0.90;
+        if (season === "Summer") {
+            location = "Alaska";
+        } else {
+            location = "Morocco";
+        }
+
+    }
+
+        console.log(`${location} - ${typeAccommodation} - ${Number(price).toFixed(2)}`);
+
+}
