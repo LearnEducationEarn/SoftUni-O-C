@@ -32,9 +32,6 @@ function vacation(input) {
         } else {
             location = "Morocco";
         }
-
     }
-
         console.log(`${location} - ${typeAccommodation} - ${Number(price).toFixed(2)}`);
-
 }
