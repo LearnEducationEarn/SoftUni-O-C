@@ -1,0 +1,40 @@
+function truckDriver(input) {
+    let season = input[0];
+    let kilometersPerMonth = Number(input[1]);
+
+    let MONTHS_IN_ONE_SEASON = 4;
+
+    let moneyPerSeason = 0;
+    switch (season) {
+        case "Spring":
+        case "Autumn":
+            if (kilometersPerMonth <= 5000) {
+                moneyPerSeason = (kilometersPerMonth * 0.75) * MONTHS_IN_ONE_SEASON;
+            } else if (kilometersPerMonth > 5000 && kilometersPerMonth <= 10000) {
+                moneyPerSeason = (kilometersPerMonth * 0.95) * MONTHS_IN_ONE_SEASON;
+            } else if (kilometersPerMonth > 10000 && kilometersPerMonth <= 20000) {
+                moneyPerSeason = (kilometersPerMonth * 1.45) * MONTHS_IN_ONE_SEASON;
+            }
+            break;
+        case "Summer":
+            if (kilometersPerMonth <= 5000) {
+                moneyPerSeason = (kilometersPerMonth * 0.90) * MONTHS_IN_ONE_SEASON;
+            } else if (kilometersPerMonth > 5000 && kilometersPerMonth <= 10000) {
+                moneyPerSeason = (kilometersPerMonth * 1.10) * MONTHS_IN_ONE_SEASON;
+            } else if (kilometersPerMonth > 10000 && kilometersPerMonth <= 20000) {
+                moneyPerSeason = (kilometersPerMonth * 1.45) * MONTHS_IN_ONE_SEASON;
+            }
+            break;
+        case "Winter":
+            if (kilometersPerMonth <= 5000) {
+                moneyPerSeason = (kilometersPerMonth * 1.05) * MONTHS_IN_ONE_SEASON;
+            } else if (kilometersPerMonth > 5000 && kilometersPerMonth <= 10000) {
+                moneyPerSeason = (kilometersPerMonth * 1.25) * MONTHS_IN_ONE_SEASON; 
+            } else if (kilometersPerMonth > 10000 && kilometersPerMonth <= 20000) {
+                moneyPerSeason = (kilometersPerMonth * 1.45) * MONTHS_IN_ONE_SEASON;
+            }
+            break;    
+    }
+    let total = moneyPerSeason * 0.90;
+        console.log(Number(total).toFixed(2));
+}
