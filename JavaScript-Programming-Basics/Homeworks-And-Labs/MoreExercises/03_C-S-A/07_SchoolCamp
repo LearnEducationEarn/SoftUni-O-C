@@ -1,0 +1,63 @@
+function schoolCamp(input) {
+    let season = input[0];
+    let groupType = input[1];
+    let numberOfStudents = Number(input[2]);
+    let numberOfNights = Number(input[3]);
+
+    let typeSport = "";
+    let pricePerNight = 0;
+    if (season === "Winter") {
+        if (groupType === "boys" || groupType === "girls") {
+            pricePerNight = numberOfNights * 9.60;
+        } else {
+            pricePerNight = numberOfNights * 10;
+        }
+    } else if (season === "Spring") {
+        if (groupType === "boys" || groupType === "girls") {
+            pricePerNight = numberOfNights * 7.20;
+        } else {
+            pricePerNight = numberOfNights * 9.50;
+        }
+    } else if (season === "Summer") {
+        if (groupType === "boys" || groupType === "girls") {
+            pricePerNight = numberOfNights * 15;
+        } else {
+            pricePerNight = numberOfNights * 20;
+        }
+    }
+    if (numberOfStudents >= 10 && numberOfStudents < 20) {
+            pricePerNight = pricePerNight - pricePerNight * 0.05;
+    } else if (numberOfStudents >= 20 && numberOfStudents < 50 ) {
+            pricePerNight = pricePerNight - pricePerNight * 0.15;
+    } else if (numberOfStudents >= 50) {
+            pricePerNight = pricePerNight - pricePerNight * 0.50;
+    }
+    if (groupType === "girls") {
+        if (season === "Winter") {
+            typeSport = "Gymnastics";
+        } else if (season === "Spring") {
+            typeSport = "Athletics";
+        } else {
+            typeSport = "Volleyball";
+        }
+    } else if (groupType === "boys") {
+        if (season === "Winter") {
+            typeSport = "Judo";
+        } else if (season === "Spring") {
+            typeSport = "Tennis";
+        } else {
+            typeSport = "Football";
+        }
+    } else {
+        if (season === "Winter") {
+            typeSport = "Ski";
+        } else if (season === "Spring") {
+            typeSport = "Cycling";
+        } else {
+            typeSport = "Swimming";
+        }
+    }
+        let total = numberOfStudents * pricePerNight;
+
+        console.log(`${typeSport} ${Number(total).toFixed(2)} lv.`);
+}
