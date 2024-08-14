@@ -1,1 +1,19 @@
+function transportPrice(input) {
+    let numberOfKilometers = Number(input[0]);
+    let dayTime = input[1];
 
+
+    let price = 0;
+    if (numberOfKilometers >= 100) {
+        price = numberOfKilometers * 0.06;
+    } else if (numberOfKilometers >= 20) {
+        price = numberOfKilometers * 0.09;
+    } else {
+        if (dayTime === "day") {
+            price = numberOfKilometers * 0.79 + 0.70    ;
+        } else if (dayTime === "night") {
+            price = numberOfKilometers * 0.90 + 0.70;
+        }
+    }
+        console.log(Number(price).toFixed(2));
+}
