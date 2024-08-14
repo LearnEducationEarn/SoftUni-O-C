@@ -1,0 +1,23 @@
+function harvest(input) {
+    let squadMetersVineyard = Number(input[0]);
+    let grapesForSquadMetter = Number(input[1]);
+    let neededLitersWine = Number(input[2]);
+    let numberOfWorkers = Number(input[3]);
+
+
+    let totalGrapes = squadMetersVineyard * grapesForSquadMetter;
+    let litersWine = totalGrapes * 0.40 / 2.5;
+
+    let diff = 0;
+    let winePerWorker = 0;
+    if (litersWine >= neededLitersWine) {
+        diff = Math.ceil(litersWine - neededLitersWine);
+        winePerWorker = Math.ceil(diff / numberOfWorkers);
+        console.log(`Good harvest this year! Total wine: ${litersWine} liters.`);
+        console.log(`${diff} liters left -> ${winePerWorker} liters per person.`)
+    } else {
+        diff = Math.floor(neededLitersWine - litersWine);
+        console.log(`It will be a tough winter! More ${diff} liters wine needed.`);
+        
+    }
+}
