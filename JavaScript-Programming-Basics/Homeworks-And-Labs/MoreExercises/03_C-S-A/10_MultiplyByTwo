@@ -1,0 +1,18 @@
+function multiplyByTwo(input) {
+    let number = Number(input[0]);
+
+    let command = 1;
+    
+    while (number >= 0) {
+    let n = number * 2;
+
+        console.log(`Result: ${Number(n).toFixed(2)}`);
+
+        number = input[command++];
+    }
+    
+    if (number < 0) {
+        console.log("Negative number!");
+        
+    }
+}
