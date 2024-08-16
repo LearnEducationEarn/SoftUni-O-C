@@ -1,0 +1,21 @@
+function backToThePast(input) {
+    let inheritanceMoney = Number(input[0]);
+    let yearHeWillLive = Number(input[1]);
+
+    let ages = 18;
+    let moneyLeft = inheritanceMoney;
+    for (let age = 1800; age <= yearHeWillLive; age++) {
+        if (age % 2 === 1) {
+            moneyLeft -= 12000 + ages * 50;
+            ages++;    
+        } else {    
+            moneyLeft -= 12000;
+            ages++;    
+        }
+    }
+    if (moneyLeft < 0) {
+        console.log(`He will need ${Number(Math.abs(moneyLeft)).toFixed(2)} dollars to survive.`);
+    } else {
+        console.log(`Yes! He will live a carefree life and will have ${Number(moneyLeft).toFixed(2)} dollars left.`);
+    }
+}
