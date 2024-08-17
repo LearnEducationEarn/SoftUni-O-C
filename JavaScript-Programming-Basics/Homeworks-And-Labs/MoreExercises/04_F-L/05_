@@ -1,0 +1,36 @@
+function gameOfIntervals(input) {
+    let movesInTheGame = Number(input[0]);
+
+    let index = 1;
+
+    let invalidNumbers = 0;
+    let numberUnderTen = 0;
+    let numberUnderNineteen = 0;
+    let numberUnderTwentyNine = 0;
+    let numberUnderThirtyNine = 0;
+    let numberUnderFifty = 0;
+    let points = 0;
+
+    for (let move = 1; move <= movesInTheGame; move++) {
+        let currentNumber = Number(input[index++]);
+
+        if (currentNumber >= 0 && currentNumber <= 9) {
+            numberUnderTen ++;
+            points += currentNumber * 0.20;
+        } else if (currentNumber >= 10 && currentNumber <= 19) {
+            numberUnderNineteen++;
+            points += currentNumber * 0.30;
+        } else if (currentNumber >= 20 && currentNumber <= 29) {
+            numberUnderTwentyNine++;
+            points += currentNumber * 0.40;
+        } else if (currentNumber >= 30 && currentNumber <= 39) {
+            numberUnderThirtyNine++;
+            points += 50;
+        } else if (currentNumber >= 40 && currentNumber <= 50) {
+            numberUnderFifty++;
+            points += 100;
+        } else {
+            invalidNumbers ++;;  
+            points = points/ 2;  
+        }
+    }
