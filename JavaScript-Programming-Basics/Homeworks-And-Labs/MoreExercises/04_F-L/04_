@@ -1,1 +1,30 @@
+function grades(input) {
+    let numberOfStudents = Number(input[0]);
 
+    let index = 1;
+
+    let counterUnderThree = 0;
+    let counterUnderFour = 0;
+    let counterUnderFive = 0;
+    let counterAboveFive = 0;
+    let counterOfAllGrades = 0;
+    for (let student = 1; student <= numberOfStudents; student++) {
+        let currentGrade = Number(input[index++]);
+
+        counterOfAllGrades += currentGrade;
+        if (currentGrade <= 2.99) {
+            counterUnderThree ++;
+        } else if (currentGrade <= 3.99) {
+            counterUnderFour ++;
+        } else if (currentGrade <= 4.99) {
+            counterUnderFive ++;
+        } else if (currentGrade >= 5) {
+            counterAboveFive ++;
+        }
+    }
+    console.log(`Top students: ${Number((counterAboveFive / numberOfStudents) * 100).toFixed(2)}%`);
+    console.log(`Between 4.00 and 4.99: ${Number((counterUnderFive / numberOfStudents) * 100).toFixed(2)}%`);
+    console.log(`Between 3.00 and 3.99: ${Number((counterUnderFour / numberOfStudents) * 100).toFixed(2)}%`);
+    console.log(`Fail: ${Number((counterUnderThree / numberOfStudents) * 100).toFixed(2)}%`);
+    console.log(`Average: ${Number(counterOfAllGrades / numberOfStudents).toFixed(2)}`);
+}
