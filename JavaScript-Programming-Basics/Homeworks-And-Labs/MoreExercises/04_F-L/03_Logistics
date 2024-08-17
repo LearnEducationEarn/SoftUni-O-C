@@ -1,0 +1,34 @@
+function logistics(input) {
+    let numberOfFreights = Number(input[0]);
+
+    const VAN_PRICE_PER_TONE = 200;
+    const TRUCK_PRICE_PER_TONE = 175;
+    const TRAIN_PRICE_PER_TONE = 120;
+
+    let index = 1;
+    let totalTone = 0;
+    
+    let toneVan = 0;
+    let toneTruck = 0;
+    let toneTrain = 0;  
+    for (let freight = 1; freight <= numberOfFreights; freight++) {
+        let currentFreightInTone = Number(input[index++]);
+        
+        totalTone += currentFreightInTone;
+        
+        if (currentFreightInTone <= 3) {
+            toneVan += currentFreightInTone;
+                    
+        } else if (currentFreightInTone >= 4 && currentFreightInTone <= 11) {
+            toneTruck += currentFreightInTone;
+                     
+        } else if (currentFreightInTone >= 12) {
+            toneTrain += currentFreightInTone;         
+        }   
+    }                   
+    let averagePricePerTone = toneVan * VAN_PRICE_PER_TONE + toneTruck * TRUCK_PRICE_PER_TONE + toneTrain * TRAIN_PRICE_PER_TONE;
+            console.log(`${Number(averagePricePerTone / totalTone).toFixed(2)}`);
+            console.log(`${Number((toneVan / totalTone) * 100).toFixed(2)}%`);
+            console.log(`${Number((toneTruck / totalTone) * 100).toFixed(2)}%`);
+            console.log(`${Number((toneTrain / totalTone) * 100).toFixed(2)}%`);
+}
