@@ -1,0 +1,34 @@
+function footballLeague(input) {
+    let stadiumCapacity = Number(input[0]);
+    let numberOfAllFans = Number(input[1]);
+
+    let sectorA = 0;
+    let sectorB = 0;
+    let sectorV = 0;
+    let sectorG = 0;
+
+    let index = 2;
+    for (let fan = 1; fan <= numberOfAllFans; fan++) {
+        let currentSector = input[index++];
+
+        if (currentSector === "A") {
+            sectorA++;
+        } else if (currentSector === "B") {
+            sectorB++;
+        } else if (currentSector === "V") {
+            sectorV++;
+        } else if (currentSector === "G") {
+            sectorG++;
+        }
+    }
+    let percentA = (sectorA / numberOfAllFans) * 100;
+    let percentB = (sectorB / numberOfAllFans) * 100;
+    let percentV = (sectorV / numberOfAllFans) * 100;
+    let percentG = (sectorG / numberOfAllFans) * 100;
+    let total = (numberOfAllFans / stadiumCapacity) * 100;
+    console.log(`${Number(percentA).toFixed(2)}%`);
+    console.log(`${Number(percentB).toFixed(2)}%`);
+    console.log(`${Number(percentV).toFixed(2)}%`);
+    console.log(`${Number(percentG).toFixed(2)}%`);
+    console.log(`${Number(total).toFixed(2)}%`);
+}
