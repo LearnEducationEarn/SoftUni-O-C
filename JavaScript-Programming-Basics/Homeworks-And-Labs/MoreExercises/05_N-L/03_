@@ -1,1 +1,27 @@
+function luckyNumbers(input) {
+        let n = Number(input[0]);
 
+        let buff = "";
+    
+        for (let i = 1111; i <= 9999; i++) {
+            i = i.toString();
+    
+            let isValid =
+                +i[0] + +i[1] === +i[2] + +i[3] &&
+                n % (+i[0] + +i[1]) === 0 &&
+                n !== +i[0] &&
+                n !== +i[1] &&
+                n !== +i[2] &&
+                n !== +i[3] &&
+                +i[0] !== 0 &&
+                +i[1] !== 0 &&
+                +i[2] !== 0 &&
+                +i[3] !== 0;
+    
+            if (isValid) {
+                buff += i + " ";
+            }
+        }
+        console.log(buff);
+    
+}
