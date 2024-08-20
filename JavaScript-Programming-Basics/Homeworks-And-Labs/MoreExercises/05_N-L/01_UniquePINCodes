@@ -1,0 +1,15 @@
+function uniquePINCodes(input) {
+    let upBorderFirstNumber = Number(input[0]);
+    let upBorderSecondNumber = Number(input[1]);
+    let upBorderThirdNumber = Number(input[2]);
+
+    for (let firstNumber = 2; firstNumber <= upBorderFirstNumber; firstNumber+=2) {
+            for (let secondNumber = 2; secondNumber <= upBorderSecondNumber; secondNumber++) {
+                for (let thirdNumber = 2; thirdNumber <= upBorderThirdNumber; thirdNumber+=2) {
+                    if (secondNumber === 2 || secondNumber === 3 || secondNumber === 5 || secondNumber === 7) {
+                        console.log(`${firstNumber} ${secondNumber} ${thirdNumber}`);
+                    }   
+            }
+        }
+    }
+}
