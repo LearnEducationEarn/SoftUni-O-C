@@ -1,0 +1,36 @@
+function dishwasher(input) {
+    let numberOfBottlesCleaningAgent = Number(input[0]);
+
+    const BOTTLE_CLEANING_AGENT = 750;
+    const CLEANING_AGENT_PER_DISH = 5;
+    const CLEANING_AGENT_PER_POT = 15;
+
+    let index = 1;
+
+    let mililitersLeft = numberOfBottlesCleaningAgent * BOTTLE_CLEANING_AGENT;
+    let dishes = 0;
+    let pots = 0;
+    let count = 0;
+    let command = input[index];
+    while (command !== "End") {
+       let currentCommand = Number(command);
+        count++;
+        if (count % 3 === 0) {
+            pots += currentCommand;
+            mililitersLeft -= currentCommand * CLEANING_AGENT_PER_POT; 
+
+        } else {
+            dishes += currentCommand;
+            mililitersLeft -= currentCommand * CLEANING_AGENT_PER_DISH;
+        }
+
+        if (mililitersLeft < 0) {
+            console.log(`Not enough detergent, ${Math.abs(mililitersLeft)} ml. more necessary!`);
+            return;
+        }
+        command = input[++index];
+    }
+        console.log("Detergent was enough!");
+        console.log(`${dishes} dishes and ${pots} pots were washed.`);
+        console.log(`Leftover detergent ${mililitersLeft} ml.`);
+}
