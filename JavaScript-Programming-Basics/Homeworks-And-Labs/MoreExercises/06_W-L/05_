@@ -1,1 +1,16 @@
+function averageNumber(input) {
+    let n = Number(input[0]);
+    let index = 1;
+    let sum = 0;
+    let counter = 0;
+  
+    for (let number = 1; number <= n; number++) {
+        let currentNumber = Number(input[index]);
 
+        sum += currentNumber;
+        counter++;
+        index++
+    }
+        let total = sum / counter;
+        console.log(Number(total).toFixed(2));
+}
