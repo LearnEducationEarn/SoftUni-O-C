@@ -1,1 +1,6 @@
+function numbersDividedByThreeWithoutReminder() {
 
+    for (let number = 3; number <= 100; number+=3) {
+        console.log(number);
+    }
+}
