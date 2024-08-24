@@ -1,0 +1,20 @@
+function fruitMarket(input) {
+    let strawberryPrice = Number(input[0]);
+    let quantityBananas = Number(input[1]);
+    let quantityOranges = Number(input[2]);
+    let quantityRaspberries = Number(input[3]);
+    let quantityStrawberry = Number(input[4]);
+
+    let raspberriesPrice = strawberryPrice / 2;
+    let orangesPrice = raspberriesPrice - (raspberriesPrice * 0.40);
+    let bananasPrice = raspberriesPrice - (raspberriesPrice * 0.80);
+
+    let raspberriesSum = quantityRaspberries * raspberriesPrice;
+    let orangesSum = quantityOranges * orangesPrice;
+    let bananasSum = quantityBananas * bananasPrice;
+    let strawberriesSum = quantityStrawberry * strawberryPrice;
+
+    let totalSum = raspberriesSum + orangesSum + bananasSum + strawberriesSum;
+
+    console.log(Number(totalSum).toFixed(2));
+}
