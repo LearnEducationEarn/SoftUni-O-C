@@ -1,1 +1,16 @@
+function trainingLab(input) {
+    let lengthInMeters = Number(input[0]);
+    let widthInMeters = Number(input[1]);
 
+    let hallWidth = widthInMeters * 100;   //8.9m
+    let hallLength = lengthInMeters * 100; //15m
+    
+    const CORRIDOR = 100;    //1m
+
+    let desksOnRow = Math.floor((hallWidth - CORRIDOR) / 70);
+    let numberOfRows = Math.floor(hallLength / 120);
+
+    let total = desksOnRow * numberOfRows - 3;
+
+    console.log(total);
+}
