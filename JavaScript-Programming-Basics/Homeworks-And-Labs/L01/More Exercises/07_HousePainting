@@ -2,8 +2,6 @@ function housePainting(input) {
     const PAINT_GREEN_PER_SQUAD_METTER = 3.4;
     const PAINT_RED_PER_SQUAD_METTER = 4.3;
     
-    
-    
     let x = Number(input[0]);           //височината на къщата - 6
     let y = Number(input[1]);           //дължината на страничната стена - 10
     let h = Number(input[2]);           //височината на триъгълната стена на покрива - 5.2
