@@ -1,1 +1,20 @@
+function pets(input) {
+    let numberOfDays = Number(input[0]);
+    let leftFood = Number(input[1]);
+    let dogFoodPerDay = Number(input[2]);
+    let catFoodPerDay = Number(input[3]);
+    let turtleFoodPerDay = Number(input[4]);
 
+    let dogFood = numberOfDays * dogFoodPerDay;
+    let catFood = numberOfDays * catFoodPerDay;
+    let turtleFood = numberOfDays * turtleFoodPerDay;
+
+    let total = dogFood + catFood + turtleFood / 1000;
+    if (leftFood >= total) {
+        let diff = Math.floor(leftFood - total);
+        console.log(`${diff} kilos of food left.`);
+    } else {
+        let diff = Math.ceil(total - leftFood);
+        console.log(`${diff} more kilos of food are needed.`);
+    }
+}
