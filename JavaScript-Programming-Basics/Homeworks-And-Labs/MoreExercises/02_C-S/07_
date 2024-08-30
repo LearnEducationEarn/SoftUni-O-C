@@ -1,1 +1,14 @@
-
+function fuelTank(input) {
+    let typeFuel = input[0];
+    let litersInTank = Number(input[1]);
+    
+    if (typeFuel !== "Diesel" && typeFuel !== "Gasoline" && typeFuel !== "Gas") {
+        console.log("Invalid fuel!");
+        return;
+    }
+    if (litersInTank >= 25) {
+        console.log(`You have enough ${typeFuel.toLowerCase()}.`);
+    } else {
+        console.log(`Fill your tank with ${typeFuel.toLowerCase()}!`);
+    }
+}
